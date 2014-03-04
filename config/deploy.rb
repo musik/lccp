@@ -64,7 +64,7 @@ namespace :app do
   end
   task :rewrite do
     set :user,'root'
-    upload './config/nginx.dir.conf','/etc/nginx/global/dir.conf'
+    upload './config/nginx.destoon.conf','/etc/nginx/global/destoon-955871.conf'
     run "service nginx reload"
   end
 end
