@@ -1,0 +1,101 @@
+{php $CSS = array('index');}
+{template 'header'}
+<div id="ipad_tips" style="display:none;"></div>
+
+<div class="m welcome">
+  <div class="m_l_0 f_l">
+    <div class="ibanks">
+      <ul  class="nav-list">
+        {php $mid = 23;}
+        {php $child = get_maincat(0, $mid, 1);}
+        {loop $child $i $c}
+        <li><a href="{$MODULE[$mid][linkurl]}{$c[linkurl]}" target="_blank">{set_style($c[catname], $c[style])}理财产品</a></li>
+        <li><a href="{$MODULE[$mid][linkurl]}{$c[linkurl]}" target="_blank">{set_style($c[catname], $c[style])}理财产品</a></li>
+        {/loop}
+      </ul>
+    </div>
+  </div>
+  <div class="m_n f_l">&nbsp;</div>
+  <div class="m_r_0 f_l">
+    <div class="topr">
+      <img class="wealth-ad" src="/skin/v2/ad/wealth-ad.png" width=400 height=280 />
+    </div>
+    <div class="topl">
+      <div class="search-filters">
+        <div class="search-filter" style="z-index: 10;">
+          <div class="search-filter-title">投资金额：</div>
+          <div id="wealth-amount" class="search-filter-content ui-select" data-click="{mod: 'search', act:'b'}">
+            <div class="ui-select-box">
+              <div class="ui-select-value" value="">不限</div>
+              <span><label>◆</label></span>
+            </div>
+            <div class="ui-select-show"><span><a data-value="0" class="ui-select-select">不限</a></span><span><a data-value="1">0-6万</a></span><span><a data-value="2">6-16万</a></span><span><a data-value="3">16-50万</a></span><span style="border-bottom: 0"><a data-value="4">50万以上</a></span></div></div>
+        </div>
+        <div class="search-filter" style="z-index: 9;">
+          <div class="search-filter-title">投资期限：</div>
+          <div id="wealth-cycle" class="search-filter-content ui-select" data-click="{mod: 'search', act:'b'}">
+            <div class="ui-select-box">
+              <div class="ui-select-value" value="">不限</div>
+              <span><label>◆</label></span>
+            </div>
+            <div class="ui-select-show"><span><a data-value="0" class="ui-select-select">不限</a></span><span><a data-value="1">3个月以下</a></span><span><a data-value="2">3-6个月</a></span><span style="border-bottom: 0"><a data-value="3">6个月以上</a></span></div></div>
+        </div>
+        <div class="search-filter" style="z-index: 8;">
+          <div class="search-filter-title">预期收益：</div>
+          <div id="wealth-break-even" class="search-filter-content ui-select" data-click="{mod: 'search', act:'b'}">
+            <div class="ui-select-box">
+              <div class="ui-select-value" value="">不限</div>
+              <span><label>◆</label></span>
+            </div>
+            <div class="ui-select-show"><span><a data-value="0" class="ui-select-select">不限</a></span><span><a data-value="1">3%以下</a></span><span><a data-value="2">3%-5%</a></span><span><a data-value="3">5%-8%</a></span><span style="border-bottom: 0"><a data-value="4">8%以上</a></span></div></div>
+        </div>
+        <div data-click="{mod: 'search', act:'a'}" class="OP_LOG_BTN home-main-btn">搜索理财产品</div>
+        <div class="hot">
+          <div class="hot-title">
+            热门理财： 
+          </div> 
+          <div class="hot-content">
+            <a data-click="{mod: 'search', act:'a'}" href="" target="_blank">保本理财产品</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="m b10">&nbsp;</div>
+
+{template 'wealth','home'}
+{if $DT[page_logo] || $DT[page_text]}
+<div class="m">
+  <div class="tab_head">
+    <span class="f_r f_n px12"><a href="{$MODULE[3][linkurl]}shortcut.php" rel="nofollow" class="g">保存本站桌面快捷方式 &darr;</a>&nbsp;&nbsp;&nbsp;</span>
+    <ul>
+      <li class="tab_2"><a href="{$EXT[link_url]}">友情链接</a></li>
+      <li class="tab_1"><a href="{$EXT[link_url]}{rewrite('index.php?action=reg')}">申请链接</a></li>
+    </ul>
+  </div>
+  <div class="box_body">
+    {if $DT[page_logo]}
+    <!--{tag("table=link&condition=status=3 and level>0 and thumb<>'' and username=''&areaid=$cityid&pagesize=".$DT['page_logo']."&order=listorder desc,itemid desc&lazy=$lazy&template=list-link&cols=9")}-->
+    {/if}
+    {if $DT[page_text]}
+    <!--{tag("table=link&condition=status=3 and level>0 and thumb='' and username=''&areaid=$cityid&pagesize=".$DT['page_text']."&order=listorder desc,itemid desc&template=list-link&cols=9")}-->
+    {/if}
+  </div>
+</div>
+{/if}
+<script type="text/javascript" src="{DT_STATIC}file/script/index.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/marquee.js"></script>
+<script type="text/javascript">
+  new dmarquee(22, 10, 3000, 'site_stats');
+  new dmarquee(22, 30, 3000, 'company');
+  if(get_cookie('auth')) {
+    $('.iuser_l')[0].title = '商务中心';
+    $('.iuser_l')[0].href = '{$MODULE[2][linkurl]}';
+    $('.iuser_l')[0].className = 'iuser_u';
+    $('.iuser_r')[0].title = '完善我的会员资料';
+    $('.iuser_r')[0].href = '{$MODULE[2][linkurl]}edit.php';
+    $('.iuser_r')[0].className = 'iuser_e';
+  }
+</script>
+{template 'footer'}

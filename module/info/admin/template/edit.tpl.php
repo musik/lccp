@@ -85,6 +85,10 @@ var property_admin = 1;
 <?php echo deditor($moduleid, 'content', $MOD['editor'], '98%', 350);?><span id="dcontent" class="f_red"></span>
 </td>
 </tr>
+<tr>
+<td class="tl"><span class="f_hid">*</span> <?php echo $MOD['name'];?>简介</td>
+<td><textarea name="post[introduce]" style="width:90%;height:45px;"><?php echo $introduce;?></textarea></td>
+</tr>
 <?php
 if($MOD['swfu']) { 
 	include DT_ROOT.'/api/swfupload/editor.inc.php';

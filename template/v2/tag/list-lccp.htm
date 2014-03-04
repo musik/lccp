@@ -1,0 +1,53 @@
+{$cats}
+<div class="products">
+{loop $tags $k $t}
+  <div class="product">
+    <div class="pdt-left">
+      <h3>
+        <a href="{$t[linkurl]}" target="_blank">{$t[title]}</a>
+        <small>{human_kind($t[kind])}</small>
+      </h3>
+      <div class="meta">
+        <span>
+          <i>&bull;</i>
+          风险偏好:
+          <em>{human_risk($t[risk])}</em>
+        </span>
+        <span>
+          <i>•</i>
+          币种:
+          <em>{human_currency($t[currency])}</em>
+        </span>
+        <span>
+          <i>•</i>
+          起购金额:
+          <em>{if $t[qigou]}{$t[qigou]}万{else}--{/if}</em>
+        </span>
+        <span>
+          <i>•</i>
+          期限:
+          <em>{if $t[term]}{$t[term]}天{else}--{/if}</em>
+        </span>
+      </div>
+      <div class="meta">
+        <span class="bankname">
+          <i>•</i>
+          银行:
+          {human_cat($t[catid])}
+        </span>
+        <a href="{$t[linkurl]}" target="_blank" class="intro">{$t[introduce]}</a>
+      </div>
+    </div>
+    <div class="pdt-right">
+      <label>
+        预期年化收益率
+      </label>
+      <div class="yld">{$t[yld]}<small>%</small></div>
+      <div class="link">
+        <a href="{$t[linkurl]}" target="_blank" class="btnx btn-xs btn-info">查看详情</a>
+      </div>
+    </div>
+  </div>
+{/loop}		
+</div>
+{if $showpage && $pages}<div class="pages">{$pages}</div>{/if}
