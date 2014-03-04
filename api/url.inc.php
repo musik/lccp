@@ -21,6 +21,7 @@ $urls['php']['list'][2] = array('example'=>'('.$L['url_rewrite'].') list-htm-cat
 $urls['php']['list'][3] = array('example'=>'('.$L['url_rewrite'].') list-1-2.html','index'=>'list-{$catid}.html', 'page'=>'list-{$catid}-{$page}.html');
 $urls['php']['list'][4] = array('example'=>'('.$L['url_rewrite'].') list/1/','index'=>'list/{$catid}/', 'page'=>'list/{$catid}/{$page}/');
 $urls['php']['list'][5] = array('example'=>'('.$L['url_rewrite'].') mulu-c1-2.html','index'=>'{$catdir}-c{$catid}-1.html', 'page'=>'{$catdir}-c{$catid}-{$page}.html');
+$urls['php']['list'][6] = array('example'=>'('.$L['url_rewrite'].') mulu.html','index'=>'{$catdir}.html', 'page'=>'{$catdir}-c{$catid}-{$page}.html');
 
 $urls['php']['item'][0] = array('example'=>'('.$L['url_php'].') show.php?itemid=1&page=2','index'=>'show.php?itemid={$itemid}', 'page'=>'show.php?itemid={$itemid}&page={$page}');
 $urls['php']['item'][1] = array('example'=>'('.$L['url_php'].') show.php/itemid-1-page-2/','index'=>'show.php/itemid-{$itemid}/', 'page'=>'show.php/itemid-{$itemid}-page-{$page}/');
