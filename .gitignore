@@ -1,4 +1,4 @@
-*.sql
+#*.sql
 *.sql.gz
 session
 /file
@@ -6,7 +6,7 @@ session
 /file/script/
 /file/md5/
 /about
-config.inc.php
+/config.inc.php
 /template/v1
 /skin/sv1
 /announce/*.html

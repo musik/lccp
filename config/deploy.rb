@@ -29,6 +29,22 @@ after "deploy:finalize_update","app:symlink"
 namespace :app do
   task :install do
     upload "install/index.php.example","#{current_path}/install/index.php"
+    upload "install/table.sql","#{current_path}/install/table.sql"
+    upload "install/data.sql","#{current_path}/install/data.sql"
+    upload "install/config.inc.php.example","#{current_path}/config.inc.php"
+  end
+  task :remove do
+    run "rm -f #{shared_path}/file/cache/install.lock"
+    upload "install/index.php.example","#{current_path}/install/index.php"
+  end
+  task :file do
+    #tmp = user
+    #set :user,'root'
+    #run "chown -R #{tmp}:#{group} #{shared_path}/file/"
+    #run "chmod -R 775 #{shared_path}/file/"
+    #set :user,tmp
+    #upload "file","#{shared_path}/file/"
+    run_locally "rsync -avzP file lrt:#{shared_path}/ --exclude=session"
   end
   task :setup do
   end
@@ -41,12 +57,6 @@ namespace :app do
         #run "if [ -f '#{previous_release}/#{file}' ]; then cp #{previous_release}/#{file} #{latest_release}/#{file}; fi;"
       #end
     #end
-  end
-  task :remove do
-    ["config.php","data/install.lock"].each do |file|
-      run "rm -f #{latest_release}/#{file}"
-    end
-    run "ln -s #{shared_path}/config.php #{latest_release}/config.php" 
   end
   task :rewrite do
     set :user,'root'
