@@ -1,7 +1,7 @@
 {template 'header'}
 <script type="text/javascript">var module_id= {$moduleid},item_id={$itemid},content_id='content',img_max_width={$MOD[max_width]};</script>
 <div class="m">
-  <div class="m_l_1 f_l">
+  <div class="m_l f_l">
     <div class="left_box">		
       <div class="pos">当前位置: <a href="{$MODULE[1][linkurl]}">首页</a> &raquo; <a href="{$MOD[linkurl]}">{$MOD[name]}</a> &raquo; {cat_pos($CAT, ' &raquo; ')} &raquo; </div>
       <div class="info_main">		
@@ -49,7 +49,7 @@
     </div>
   </div>
   <div class="m_n f_l">&nbsp;</div>
-  <div class="m_r_1 f_l">
+  <div class="m_r f_l">
     <div class="contact_head">联系方式</div>		
     <div class="contact_body" id="contact">{template 'contact', 'chip'}</div>
     <div class="b10 c_b">&nbsp;</div>		

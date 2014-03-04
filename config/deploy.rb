@@ -17,6 +17,9 @@ role :db,  "lrt", :primary => true # This is where Rails migrations will run
 after "deploy:restart", "deploy:cleanup"
 set :shared_children, [
           "file",
+          #"config.inc.php",
+          "about",
+          "announce"
     ]
 set :group_writable,true
 set :use_sudo, false
@@ -53,10 +56,11 @@ namespace :app do
     #set :user,'root'
     #run "chown -R #{tmp}:#{group} #{latest_release}"
     #if previous_release
-      #["data/install.lock"].each do |file|
+      #["config.inc.php"].each do |file|
         #run "if [ -f '#{previous_release}/#{file}' ]; then cp #{previous_release}/#{file} #{latest_release}/#{file}; fi;"
       #end
     #end
+    run "ln -s #{shared_path}/config.inc.php #{latest_release}/config.inc.php"
   end
   task :rewrite do
     set :user,'root'
