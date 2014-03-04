@@ -7,5 +7,6 @@ $names = array (
   'message' => '留言页',
   'search' => '搜索页',
   'show' => '内容页',
+  'show-lccp' => '理财产品单页',
 );
 ?>

@@ -11,6 +11,15 @@ function human_currency($key){
   $vars = array(1=>'人民币',2=>'美元',3=>'其它');
   return empty($vars[$key]) ? '--' :  $vars[$key];
 }
+function human_qigou($var){
+  return empty($var) ? '--' :  $var."万";
+}
+function human_term($var){
+  return empty($var) ? '--' :  $var."天";
+}
+function human_yld($var){
+  return empty($var) ? '--' :  $var."%";
+}
 function human_cat($cat_id){
   global $maincat;
   foreach($maincat as $v){

@@ -42,7 +42,7 @@
       <label>
         预期年化收益率
       </label>
-      <div class="yld">{$t[yld]}<small>%</small></div>
+      <div class="yld">{if $t[yld]}{$t[yld]}<small>%</small>{else}--{/if}</div>
       <div class="link">
         <a href="{$t[linkurl]}" target="_blank" class="btnx btn-xs btn-info">查看详情</a>
       </div>
