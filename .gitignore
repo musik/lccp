@@ -9,3 +9,5 @@ session
 config.inc.php
 /template/v1
 /skin/sv1
+/announce/*.html
+index.html
