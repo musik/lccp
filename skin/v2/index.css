@@ -125,12 +125,12 @@ ul.nav-list li a{
 .m_l_0{width: 160px; }
 .m_r_0{width: 810px; background: #f6f6f6;}
 .topr {width:400px;float:right;margin: 20px;}
-.topl {width:330px;margin: 20px;}
+.topl {float: left;width:330px;margin: 20px;}
 /*.wealth-ad{margin: 20px}*/
 
 .search-filters {
 	float:left;
-	margin-right:69px;
+	/*margin-right:69px;*/
 	width:241px
 }
 .search-filters .search-filter {

@@ -4,3 +4,6 @@
 */
 body {_background-image:url('image/spacer.gif');_background-attachment:fixed;}
 #head {_position:absolute;_top:expression(documentElement.scrollTop);}
+.topr,.topl{
+  margin: 20px 10px;
+}

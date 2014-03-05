@@ -39,6 +39,9 @@
 <script type="text/javascript" src="{DT_STATIC}file/script/common.js"></script>
 <script type="text/javascript" src="{DT_STATIC}file/script/page.js"></script>
 {if $lazy}<script type="text/javascript" src="{DT_STATIC}file/script/jquery.lazyload.js"></script>{/if}
+<!--[if lt IE 9]>
+<script src="{DT_SKIN}/html5shiv.js"></script>
+<![endif]-->
 {if $JS}
 {loop $JS $js}
 <script type="text/javascript" src="{DT_STATIC}file/script/{$js}.js"></script>
